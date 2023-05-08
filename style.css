@@ -1,0 +1,1127 @@
+
+/* ----------------------------------Styling hele siden-------------------------- */
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background:linear-gradient(to top left, rgb(0, 0, 114), rgb(90, 89, 89)) no-repeat;
+}
+/* ---------------------------------------OVERSKRIFT----------------------------- */
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.overskrift {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 1000px;
+    background-color: rgba(255, 255, 255, 0.14);
+    border-radius: 25px;
+    font-size: 25px;
+}
+/* Darkmode slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #000000;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #000000;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+/* -----------------------------------container til knapp for sidebar------------ */
+.container-burger{
+    display: flex;
+    justify-content: end;
+    -webkit-position:sticky;
+    -moz-position:sticky;
+    -o-position:sticky;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+/* ----------------------------------STYLING av sidebar innhold ----------------- */
+
+#hamburger-button{
+    background-color: transparent;
+        position: sticky;
+        top: 0px;
+        cursor: pointer;
+        width: 250px;
+        border: none;
+        font-size: 30px;
+        border-bottom: solid .1px black;
+    }
+#hamburger-button1 {
+        display: flex;
+        justify-content: center;
+        background-color: transparent;
+        position: sticky;
+        top: 0px;
+        cursor: pointer;
+        width: 50px;
+        border: none;
+        font-size: 35px;
+        box-shadow: 0 0 1px 1px;
+        z-index: -5;
+        transition: .5s;
+        border-bottom-left-radius: 40px;
+        border-top-left-radius: 40px;
+        transition:width .9s;
+    }
+#hamburger-button1:hover {
+    background-color: white;
+    width: 100px;
+
+}
+.burger-button{
+        opacity: 0.4;
+        opacity: 1;
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: flex;
+        width: 0px;
+        align-items: start;
+        flex-direction: column;
+        transition: width 0.5s;
+        z-index: 100;
+}
+
+.sidebar{
+    background:linear-gradient(to top left, rgb(0, 0, 114), rgb(133, 133, 133));
+    opacity: 0.4;
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    width:0px;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    transition:width 0.5s;
+    overflow: hidden;
+    z-index: 100;
+}
+#anchor-btn{
+    height: 100%;
+}
+#para1{
+    font-size:15px;
+    font-weight: 600;
+}
+#button-home,#button-kalk,#button-teori,#button-video, #button-ansvar{
+    width: 5000px;
+    height: 100%;
+    background-size: 300% 100%;
+    font-size: 50px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+#button-home:hover,#button-kalk:hover,#button-teori:hover,#button-video:hover, #button-ansvar:hover{
+    border: solid 1px black;
+    font-size: 60px;
+
+}
+/* Forside */
+.container-forside-bilde{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+.forside-bilde{
+    width: 100%;
+    height: fit-content;
+}
+#forside-bilde-id{
+    height: 600px;
+    width: 100%;
+    object-position: top;
+    object-fit: cover;
+
+}
+.text{
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    color: white;
+    font-size: 18px;
+}
+/* Card styling ----------------------------- */
+.overskrift-ansvar{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+    font-size: 25px;
+}
+.container-cards{
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+    width: 100%;
+    height: fit-content;
+    gap: 50px;
+    flex-wrap: wrap;
+
+
+}
+.card{
+    width: 400px;
+    height: 500px;
+    background: #e0e0e0;
+    box-shadow: -5px -5px 3px #000000,
+        5px 5px 3px #000000;
+    border-radius: 30px;
+}
+.bilde{
+    display: flex;
+    width: 100%;
+    height: 70%;
+}
+#tarje-bilde,#andreas-bilde,#tobias-bilde{
+    border-radius: 30px;
+    object-fit: fill;
+    height: 100%;
+    width: 100%;
+}
+.tekst{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 30px;
+    width: 100%;
+    height: 30%;
+    align-self: center;
+}
+#card-overskrift{
+    position: absolute;
+    left: 25px;
+    font-size: 17px;
+}
+.navn{
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+/* kalkulator ------------------------------- */
+.kalk-overskrift {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 50px;
+}
+
+.seksjon-kalk {
+    margin: 0 15px 0 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 500px;
+    background-color: white;
+    box-shadow: 0 0 5px 5px;
+}
+
+.container-kalk {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.kalkulator {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-self: center;
+    border: solid 2px black;
+    height: fit-content;
+    background-color: rgba(136, 165, 189, 0.148);
+}
+
+.input-seksjon,
+#input1,
+#input2,
+#input3,
+#input4 {
+    width: 100% - 4px;
+    font-size: 30px;
+}
+
+#equal {
+    font-size: 35px;
+}
+
+
+.bildeKalk {
+    background-repeat: no-repeat;
+}
+
+.svar-container-re {
+    margin: 25px 0 25px 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+.svar-reynhold {
+    width: fit-content;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+#svarRE {
+    display: flex;
+    justify-content: center;
+    color: green;
+}
+
+.info-overskrift {
+    display: flex;
+    justify-content: space-around;
+}
+
+.viskositet,
+.tetthet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.container-info-reynhold {
+    display: flex;
+    justify-content: space-around;
+}
+
+#reyn-bilder {
+    object-fit: contain;
+    width: 400px;
+    height: 400px;
+    max-width: 100%;
+}
+
+/* animasjon vannfylling */
+ .container-animasjon-3 {
+     position: relative;
+     display: flex;
+     justify-content: center;
+     height: 150px;
+     width: 250px;
+ }
+
+
+ .jar-2 {
+     position: absolute;
+     bottom: -2px;
+     background-color: transparent;
+     border-bottom: white 2px solid;
+     border-right: white 2px solid;
+     border-left: white 2px solid;
+     height: 61px;
+     width: 50px;
+     border-bottom-left-radius: 5px;
+     border-bottom-right-radius: 5px;
+ }
+ .kran-1{
+     position: absolute;
+     height: 10px;
+     width: 20px;
+     background-color: grey;
+     border: solid 1px black;
+     z-index: 5;
+ }
+ .kran-2{
+     position: absolute;
+     height: 5px;
+     width: 5px;
+     top: -5px;
+     border: solid 1px grey;
+ }
+ .kran-3{
+     position: absolute;
+     height: 3px;
+     width: 19px;
+     
+     cursor: pointer;
+     top: -5px;
+     transform: translateX(-16.7%);
+     background-color: red;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    z-index: 6;
+    transition: .3s;
+ }
+ .kran{
+     position: absolute;
+     height: 2px;
+     width: 20px;
+     border: solid 1px black;
+     z-index: 6;
+ }
+
+ .fill-jar-2 {
+     position: absolute;
+     bottom: 0;
+     height: 5px;
+     width: 51px;
+     background-color: rgb(0, 115, 255);
+     z-index: -1;
+     animation: filljar2 25s infinite ease-in;
+ }
+
+    .sirkel-3 {
+        rotate: 45deg;
+        width: 10px;
+        height: 10px;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-top-left-radius: 50%;
+        position: absolute;
+        background-color: rgb(0, 115, 255);
+        animation: droplet3 2.5s infinite ease-in;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes droplet3 {
+        0% {
+            top: 0;
+        }
+
+        20% {
+
+            height: 15px;
+            width: 15px;
+        }
+
+        25% {
+            border-top-left-radius: 0%;
+            /* transform: scaleX(2),scaleY(1.5); */
+            /*  */
+        }
+
+        69% {}
+
+        70% {
+
+            /* height: 32px; */
+            /* transform: scaleX(1.2); */
+            /* width: 10px; */
+        }
+
+        72% {
+
+            /* width: 11px; */
+            /* height: 28px; */
+
+        }
+
+        78% {
+
+            /* width: 16px; */
+            /* height: 23px; */
+        }
+
+        85% {
+
+            /* width: 20px; */
+            /* height: 17px; */
+            height: 15px;
+            width: 15px;
+        }
+
+        92% {
+            top: 145px;
+            width: 5px;
+            height: 5px;
+            border-top-left-radius: 0%;
+        }
+
+        100% {
+
+            top: 150px;
+            width: 0px;
+            height: 0px;
+            /* height: 0px; */
+            /* width: 30px; */
+            /* height: 0px; */
+            /* border-radius: 50px 50px 25px 25px; */
+            /* transform: scaleX(1.7); */
+        }
+    }
+
+ @keyframes filljar2 {
+     0% {
+         height: 0px;
+     }
+
+     8% {
+         height: 0px;
+     }
+
+     10% {
+         height: 5px;
+     }
+
+     18% {
+         height: 5px;
+     }
+
+     20% {
+         height: 10px;
+     }
+
+     28% {
+         height: 10px;
+     }
+
+     30% {
+         height: 15px;
+     }
+
+     38% {
+         height: 15px;
+     }
+
+     40% {
+         height: 20px;
+     }
+
+     48% {
+         height: 20px;
+     }
+
+     50% {
+         height: 25px;
+     }
+
+     58% {
+         height: 25px;
+     }
+
+     60% {
+         height: 30px;
+     }
+
+     68% {
+         height: 30px;
+     }
+
+     70% {
+         height: 35px;
+     }
+
+     78% {
+         height: 35px;
+     }
+
+     80% {
+         height: 40px;
+     }
+
+     88% {
+         height: 40px;
+     }
+
+     90% {
+         height: 45px;
+     }
+
+     98% {
+         height: 45px;
+     }
+
+     100% {
+         height: 50px;
+     }
+ }
+ /* Animasjon splash effekt */
+         .splash {
+             position: absolute;
+             height: .2px;
+             width: 10px;
+             z-index: 11;
+             border-radius: 50%;
+             background-color: transparent;
+             animation-name: splashing;
+             animation: splashing 25s infinite ease-in;
+         }
+
+                 @keyframes splashing {
+                     0% {
+                         bottom: 0px;
+                         width: 0px;
+                         border: none;
+                     }
+        
+                     8% {
+                         width: 0px;
+                         border: none;
+                     }
+        
+                     10.4% {
+                         bottom: 3px;
+                         border: solid .2px rgba(111, 173, 249, 0.809);
+                         background-color: transparent;
+                         width: 15px;
+                     }
+        
+                     12% {
+                         width: 40px;
+                     }
+        
+                     13% {
+                         border: none;
+                     }
+        
+                     18% {
+                         border: none;
+                         width: 0px;
+        
+                     }
+        
+                     19% {
+                         /* background-color: rgb(45, 45, 45); */
+                         bottom: 5px;
+                         height: 1px;
+        
+                     }
+        
+                     19.1% {
+                         width: 0px;
+                         background-color: transparent;
+                     }
+        
+                     20% {
+                         bottom: 7px;
+                         border: solid .2px rgba(111, 173, 249, 0.809);
+                         background-color: transparent;
+                         width: 15px;
+                         height: 2px;
+                     }
+        
+                     20.1% {
+                         background-color: transparent;
+                     }
+        
+                     22% {
+                         background-color: transparent;
+                         bottom: 8px;
+                         width: 40px;
+                     }
+        
+                     23% {
+                         border: none;
+                     }
+        
+                     28% {
+                         border: none;
+                     }
+        
+                     29% {
+                         /* background-color: rgb(45, 45, 45); */
+                         bottom: 11px;
+                         height: 1px;
+                     }
+        
+                     29.1% {
+                         width: 0px;
+                         background-color: transparent;
+                     }
+        
+                     30% {
+                         bottom: 13px;
+                         border: solid .2px rgba(111, 173, 249, 0.809);
+                         background-color: transparent;
+                         width: 15px;
+                         height: 2px;
+                     }
+        
+                     30.1% {
+                         background-color: transparent;
+                     }
+        
+                     32% {
+                         background-color: transparent;
+                         bottom: 14px;
+                         width: 40px;
+                     }
+        
+                     33% {
+                         border: none;
+                     }
+        
+                     38% {
+                         border: none;
+                     }
+        
+                     39% {
+                         /* background-color: rgb(45, 45, 45); */
+                         bottom: 16px;
+                         height: 1px;
+                     }
+        
+                     39.1% {
+                         width: 0px;
+                         background-color: transparent;
+                     }
+        
+                     40% {
+                         bottom: 18px;
+                         border: solid .2px rgba(111, 173, 249, 0.809);
+                         background-color: transparent;
+                         width: 15px;
+                         height: 2px;
+                     }
+        
+                     40.1% {
+                         background-color: transparent;
+                     }
+        
+                     42% {
+                         background-color: transparent;
+                         bottom: 19px;
+                         width: 40px;
+                     }
+        
+                     43% {
+                         border: none;
+                     }
+        
+                     48% {
+                         border: none;
+                     }
+        
+                     48.8% {
+                         /* background-color: rgb(45, 45, 45); */
+                         bottom: 21px;
+                         height: 1px;
+                     }
+        
+                     48.1% {
+                         width: 0px;
+                         background-color: transparent;
+                     }
+        
+                     49.5% {
+                         bottom: 22px;
+                         border: solid .2px rgba(111, 173, 249, 0.809);
+                         background-color: transparent;
+                         width: 15px;
+                         height: 2px;
+                     }
+        
+                     50.1% {
+                         background-color: transparent;
+                     }
+        
+                     52% {
+                         background-color: transparent;
+                         bottom: 23px;
+                         width: 40px;
+                     }
+        
+                     53% {
+                         border: none;
+                     }
+        
+                     58% {
+                         border: none;
+                     }
+        
+                     58.7% {
+                         /* background-color: rgb(45, 45, 45); */
+                         bottom: 26px;
+                         height: 1px;
+                     }
+        
+                     58.9% {
+                         width: 0px;
+                         background-color: transparent;
+                     }
+        
+                     59.5% {
+                         bottom: 28px;
+                         border: solid .2px rgba(111, 173, 249, 0.809);
+                         background-color: transparent;
+                         width: 15px;
+                         height: 2px;
+                     }
+        
+                     60.1% {
+                         background-color: transparent;
+                     }
+        
+                     62% {
+                         background-color: transparent;
+                         bottom: 29px;
+                         width: 40px;
+                     }
+        
+                     63% {
+                         border: none;
+                     }
+        
+                     68% {
+                         border: none;
+                     }
+        
+                     68.7% {
+                         /* background-color: rgb(45, 45, 45); */
+                         bottom: 30px;
+                         height: 1px;
+                     }
+        
+                     68.8% {
+                         width: 0px;
+                         background-color: transparent;
+                     }
+        
+                     69.3% {
+                         bottom: 32px;
+                         border: solid .2px rgba(111, 173, 249, 0.809);
+                         background-color: transparent;
+                         width: 15px;
+                         height: 2px;
+                     }
+        
+                     69.6% {
+                         background-color: transparent;
+                     }
+        
+                     72% {
+                         background-color: transparent;
+                         bottom: 33px;
+                         width: 40px;
+                     }
+        
+                     73% {
+                         border: none;
+                     }
+        
+                     78% {
+                         border: none;
+                     }
+        
+                     78.6% {
+                         /* background-color: rgb(45, 45, 45); */
+                         bottom: 35px;
+                         height: 1px;
+                     }
+        
+                     78.8% {
+                         width: 0px;
+                         background-color: transparent;
+                     }
+        
+                     79.3% {
+                         bottom: 37px;
+                         border: solid .2px rgba(111, 173, 249, 0.809);
+                         background-color: transparent;
+                         width: 15px;
+                         height: 2px;
+                     }
+        
+                     79.5% {
+                         background-color: transparent;
+                     }
+        
+                     82% {
+                         background-color: transparent;
+                         bottom: 38px;
+                         width: 40px;
+                     }
+        
+                     83% {
+                         border: none;
+                     }
+        
+                     88% {
+                         border: none;
+                     }
+        
+                     88.4% {
+                         /* background-color: rgb(45, 45, 45); */
+                         bottom: 40px;
+                         height: 1px;
+                     }
+        
+                     88.6% {
+                         width: 0px;
+                         background-color: transparent;
+                     }
+        
+                     88.8% {
+                         bottom: 42px;
+                         border: solid .2px rgba(111, 173, 249, 0.809);
+                         background-color: transparent;
+                         width: 15px;
+                         height: 2px;
+                     }
+        
+                     89.1% {
+                         background-color: transparent;
+                     }
+        
+                     91% {
+                         background-color: transparent;
+                         bottom: 43px;
+                         width: 40px;
+                     }
+        
+                     93% {
+                         border: none;
+                     }
+        
+                     96% {
+                         border: none;
+                     }
+        
+                     97.5% {
+                         /* background-color: rgb(45, 45, 45); */
+                         bottom: 44px;
+                         height: 1px;
+                     }
+        
+                     97.7% {
+                         width: 0px;
+                         background-color: transparent;
+                     }
+        
+                     98% {
+                         bottom: 45px;
+                         border: solid .2px rgba(111, 173, 249, 0.809);
+                         background-color: transparent;
+                         width: 15px;
+                         height: 2px;
+                     }
+                 }
+        /* --------------- */
+.linjeavstand {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 120px 15px 120px 15px;
+    border-bottom: 2px solid black;
+}
+
+
+/* Styling teoridel */
+.container-teori{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+.innhold-teori{
+    padding: 25px;
+    background-color: white;
+    height: fit-content;
+    font-size: 17px;
+    width: 85vw;
+    box-shadow: 0 0 2px 2px black;
+}
+
+.video1{
+    display: flex;
+    justify-content: center;
+}
+.video2 {
+    display: flex;
+    justify-content: center;
+}
+.ov1,.ov2{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+/* Knapper til koder */
+.buttons-koder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+}
+.overskrift-koder{
+    display: flex;
+    justify-content: center;
+}
+#button-kode{
+    border-radius: 50px;
+    width: 10vw;
+    height: 5vh;
+    transition:.5s;
+    cursor: pointer;
+    color: white;
+}
+#button-kode:hover{
+transform:translateY(-.5em) ;
+}
+.arduino-kode{
+    background: linear-gradient(to top left, green, black);
+}
+.arduino-kode:hover{
+    background: linear-gradient(to top left, black,green);
+    box-shadow:  0 0.9em 0.9em -0.7em rgb(98, 138, 96);
+}
+.html-kode{
+    background: linear-gradient(to top left, rgb(176, 68, 5), rgb(0, 0, 0));
+}
+.html-kode:hover{
+    background: linear-gradient(to top left,rgb(0, 0, 0), rgb(176, 68, 5));
+    box-shadow:  0 0.9em 0.9em -0.7em rgb(255, 145, 0);
+}
+.css-kode{
+    background: linear-gradient(to top left, rgb(76, 66, 213), rgb(0, 0, 0));
+}
+.css-kode:hover{
+    background: linear-gradient(to top left,rgb(0, 0, 0), rgb(76, 66, 213));
+    box-shadow:  0 0.9em 0.9em -0.7em rgb(111, 111, 255);
+}
+.javascript-kode{
+    background: linear-gradient(to top left, rgb(217, 255, 0), rgb(0, 0, 0));
+}
+.javascript-kode:hover{
+    background: linear-gradient(to top left,rgb(0, 0, 0),   rgb(217, 255, 0));
+    box-shadow:  0 0.9em 0.9em -0.7em rgb(219, 255, 111);
+}
+
+@media only screen and (max-width: 650px){
+    .overskrift{
+        font-size: 15px;
+    }
+    #hamburger-button{
+    margin: 0;
+    }
+    #forside-bilde-id{
+        height: fit-content;
+        object-fit: scale-down;
+    }
+        .overskrift-ansvar {
+            font-size: 15px;
+        }
+    .text{
+        font-size: 10px;
+    }
+    .kalk-overskrift {
+        font-size: 15px;
+        font-weight: 700;
+    }
+        .input-seksjon,
+        #input1,
+        #input2,
+        #input3,
+        #input4 {
+        font-size: 20px;
+        }
+   
+    .turbulent-flow {
+        height: 200px;
+        background-size: 100px 100px;
+
+    }
+   
+    .container-info-reynhold {
+        display: flex;
+        flex-wrap: wrap;
+    }
+   
+    .seksjon-kalk {
+        display: flex;
+        flex-direction: column;
+    }
+   
+    #reyn-bilder {
+        width: 100%;
+    }
+    .linjeavstand {
+        margin: 35px 13px 35px 13px;
+    }
+    .container-animasjon-3{
+        margin: 25px;
+    }
+    #video1-frame{
+        width: 80vw;
+        height: 50vh;
+    }
+    .ov1,.ov2{
+        font-size: 18px;
+    }
+    #button-kode{
+        width: fit-content;
+        min-width: 55px;
+        height: 30px;
+        transition:.5s;
+        cursor: pointer;
+        padding: 5px;
+    }
+}
+

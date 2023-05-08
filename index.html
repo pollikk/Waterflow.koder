@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waterflow</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Overskrift -->
+    <div class="header" id="top-page">
+        <div class="overskrift"><h1><em>Water flow sensor</em></h1></div>
+    </div>
+    <!-- Knapp for sidebar -->
+    <div class="container-burger">
+        <button id="hamburger-button1">&#61;</button>
+    </div>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <button id="hamburger-button">&#61;</button>
+        <a href="#top-page" id="anchor-btn"><button id="button-home" ><p id="para1">HJEM</p>&#8962;</button></a>
+        <a href="#ansvar-page" id="anchor-btn"><button id="button-ansvar"><p id="para1">Gruppemedlemmer</p>&#9823;</button></a>
+        <a href="#kalk-page" id="anchor-btn"><button id="button-kalk"><p id="para1">KALKULATOR</p>&#8801;</button></a>
+        <a href="#teori-page" id="anchor-btn"><button id="button-teori"><p id="para1">TEORI/VIDEO</p>&#9999;</button></a>
+        <a href="#video-page" id="anchor-btn"><button id="button-video"><p id="para1">KODER</p>&#10063;</button></a>
+        <!-- darkmode knapp -->
+            <div class="container-darkmode">
+                <p id="para1">Darkmode</p>
+                <label class="switch">
+                    <input type="checkbox" onclick="darkmodeActive()">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+    </div>
+    <!-- Forside -->
+    <div class="container-forside-bilde">
+        <div class="forside-bilde"><img id="forside-bilde-id" src="waterflow-forside.png" alt="">
+        <p class="text">Nettsiden inneholder besvarelsen på arbeidsoppdrag 2 i måleteknikk. Her er det utviklet et system for måling av vannmengde.</p>
+    </div>
+</div>
+<!-- Ansvarsområde -->
+<div class="linjeavstand" id="ansvar-page"></div>
+<div class="overskrift-ansvar" ><h1>Gruppemedlemmer</h1></div>
+<div class="container-cards">
+    <div class="card">
+            <div class="navn"><h3>Tarje</h3></div>
+        <div class="bilde"><img id="tarje-bilde" src="Tarje.PNG" alt=""></div>
+        <div class="tekst"><h2 id="card-overskrift"></h2></div>
+    </div>
+    <div class="card">
+        <div class="navn"><h3>Andreas</h3></div>
+        <div class="bilde"><img id="andreas-bilde" src="Andreas.PNG" alt=""></div>
+        <div class="tekst">
+            <h2 id="card-overskrift"></h2>
+        </div>
+    </div>
+    <div class="card">
+        <div class="navn"><h3>Tobias</h3></div>
+        <div class="bilde"><img id="tobias-bilde" src="tobias.PNG" alt=""></div>
+        <div class="tekst">
+            <h2 id="card-overskrift"></h2>
+        </div>
+    </div>
+</div>
+
+<div class="linjeavstand" id="kalk-page"></div>
+<!-- kalkulator -->
+<div class="kalk-overskrift">
+    <h2>Reynholds tall kalkulator</h2>
+</div>
+<div class="container-kalk-område" >
+    <div class="seksjon-kalk">
+        <div class="container-kalk">
+            <div class="kalkulator">
+                <div class="input-seksjon">
+                    <h3>V[m/s]</h3>
+                    <input placeholder="Hastighet" type="text" id="input1"
+                        onkeydown=" if (event.key === 'Enter'){utregner();}">
+                </div>
+                <div class="input-seksjon">
+                    <h3>D[m]</h3>
+                    <input placeholder="Diameter" type="text" id="input2"
+                        onkeydown=" if (event.key === 'Enter'){utregner();}">
+                </div>
+                <div class="input-seksjon">
+                    <h3>ρ[kg/m3]</h3>
+                    <input placeholder="væsketetthet" type="text" id="input3"
+                        onkeydown=" if (event.key === 'Enter'){utregner();}">
+                    <p id="para1"></p>
+                </div>
+                <div class="input-seksjon">
+                    <h3>μ[n*s/m2]</h3>
+                    <input placeholder="væskeviskositet" type="text" id="input4"
+                        onkeydown=" if (event.key === 'Enter'){utregner();}">
+                </div>
+                <button onkeydown="if (event.key === 'Enter'){utregner();}" id="equal">=</button>
+            </div>
+        </div>
+        <div class="bildeKalk laminar-flow turbulent-flow"></div>
+    </div>
+</div>
+<div class="svar-container-re">
+    <div class="svar-reynhold">
+        <p id="totalSvar">Svar reynholds=</p>
+        <p id="svarRE"></p>
+    </div>
+</div>
+</div>
+    <div class="container-info-reynhold">
+        <div class="viskositet">Viskositet
+            <img id="reyn-bilder" src="væskeviskositet.PNG">
+        </div>
+        <!-- vannfylling animasjon -->
+    <div class="container-animasjon-3">
+        <a class="ref-cont" onclick="turnOff()"><div id="kranOnFunc" class="kran-3"></div></a>
+        <div class="kran-2"></div>
+        <div class="kran-1"></div>
+        <div class="kran"></div>
+        <div class="splash"></div>
+        <div class="sirkel-3"></div>
+        <div class="jar-2">
+            <div class="fill-jar-2"></div>
+        </div>
+    </div>
+        <div class="tetthet">Massetetthet
+            <img id="reyn-bilder" src="væsketetthet.PNG">
+        </div>
+    </div>
+    <div id="teori-page" class="linjeavstand"></div>
+
+    <!-- teoridel -->
+    <div class="container-teori">
+        <div class="innhold-teori">Vannmåleren brukes til å måle mengden vann som strømmer gjennom et rørsystem. Den består av en hall effekt sensor som er
+        montert på røret, og som registrerer vannstrømmen ved å måle hastigheten eller trykkfallet til vannet.<br> <br>
+        Ved hjelp av en vannmåler kan man overvåke vannforbruket og beregne kostnader i et vannsystem. Den kan også brukes til å
+        oppdage unormalt høyt vannforbruk, som kan indikere en vannlekkasje. I tillegg kan vannmålere brukes til å overvåke
+        vannkvaliteten ved å registrere eventuelle endringer i strømningshastigheten, som kan indikere for eksempel en
+        forurensning i vannet.<br> <br>
+        En Hall-effekt-sensor er en elektronisk enhet som måler magnetfeltets styrke og retning og kan brukes i ulike
+        applikasjoner. I WaterFlow-sensorer brukes sensoren til å måle strømningshastigheten av væsken som passerer gjennom
+        sensoren. Sensoren er plassert langs en vegg i sensoren, og når væsken strømmer forbi, genererer den et magnetfelt som
+        påvirker Hall-effekt-sensoren. Ved å måle magnetfeltet kan sensoren beregne strømningshastigheten. Det er viktig å
+        påpeke at Hall-effekt-sensoren ikke måler mengden av væske som passerer gjennom sensoren, kun hastigheten på væsken. Til
+        høyre ser man en tegning som viser utseendet til magneten som befinner seg inne i sensoren.
+</div>
+    </div>
+    <div class="linjeavstand"></div>
+<div class="container1">
+
+    <!-- video del -->
+    <h2 class="ov1">Video av måling av vannmengde med kaldt vann</h2><!-- Setter på overskrift over video -->
+     <div class="video1"><!-- Setter innn styling av første video -->
+        <iframe id="video1-frame" width="1260" height="815" src="https://www.youtube.com/embed/0vjbaGQEuEQ" title="YouTube video       player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;    picture-in-picture; web-share" allowfullscreen></iframe>
+     </div>
+<div class="linjeavstand"></div>
+        <!-- video del -->
+        <h2 class="ov2">Video av måling av vannmengde med varmt vann</h2><!-- Setter på overskrift over video -->
+        <div class="video2"><!-- Setter innn styling av første video -->
+            <iframe id="video1-frame" width="1260" height="815" src="https://www.youtube.com/embed/QLl8BJx4Rkc"
+                title="YouTube video           player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;        picture-in-picture; web-share"
+                allowfullscreen></iframe>
+    </div>
+</div>
+     <div class="linjeavstand" id="video-page"></div>
+
+     <div class="overskrift-koder"><h1>Koder brukt:</h1></div>
+     <div class="buttons-koder">
+        <a href="pollikk.github.io"><button id="button-kode" class="arduino-kode">Arduino</button></a>
+        <a href=""><button id="button-kode" class="html-kode">HTML</button></a>
+        <a href=""><button id="button-kode" class="css-kode">CSS</button></a>
+        <a href=""><button id="button-kode" class="javascript-kode">Javascript</button></a>
+     </div>
+     <div class="linjeavstand"></div>
+    <script src="script.js"></script>
+</body>
+</html>
